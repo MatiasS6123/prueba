@@ -1,0 +1,64 @@
+<ion-header [translucent]="true" *ngIf="isProfileVisible " >
+  <ion-toolbar>
+    <ion-title>perfil</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="primary" *ngIf=" isProfileVisible ">
+
+  
+  <ion-card class="gradiente">
+
+    <ion-card-header>
+      <ion-card-title>Perfil</ion-card-title>
+    </ion-card-header>
+    <form *ngIf=" isProfileVisible " >
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input value="{{usuario.nombre}}" required></ion-input>
+        
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input value="{{usuario.apellido}}"type="text" required></ion-input>
+        
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Rut</ion-label>
+          <ion-input value="{{usuario.rut}}" type="text" required></ion-input>
+         
+      </ion-item>
+      
+      <ion-item>
+          <ion-label position="floating">Telefono</ion-label>
+          <ion-input value="{{usuario.telefono}}" type="tel" required></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Dirección</ion-label>
+        <ion-input value="{{usuario.direccion}}" type="tel" required></ion-input>
+  
+    </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Fecha nacimiento </ion-label><br>
+          <ion-input value="{{usuario.fechaNac}}" type="date" required></ion-input>
+         
+      </ion-item>
+            
+
+  
+  
+      <ion-button (click)="actualizarDatos(usuario)" color="success" >Actualiazar</ion-button>
+      <ion-button (click)="DeleteUsuario()" color="danger" >Eliminar</ion-button>
+     
+    </form>
+    
+  </ion-card>
+  
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar id="id" color="primary" *ngIf="login">
+    <ion-buttons slot="start" color="secondary">
+      <ion-menu-button contentId="main-content"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/perfil']">
+        <ion-icon  slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary"  [fullscreen]="true">
+
+  <div id="container" *ngIf="!login" >
+    <ion-button  fill="line" [routerLink]="['/registro']">Registro</ion-button>
+    <br>
+    <ion-button  fill="line" [routerLink]="['/login']">Iniciar sesi&oacute;n</ion-button>
+
+  </div>
+</ion-content>

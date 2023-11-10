@@ -1,0 +1,94 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="subt">Ajustes de prodcutos </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h3 class=" p-3 encabezado" >Ingrese los datos del producto</h3>
+  
+  
+  <div style="text-align: end; margin: 10px;">
+    <ion-button (click)="nuevo()" color="dark">Nuevo</ion-button>
+  </div>
+
+  <div *ngIf="activo" >
+
+    <ion-item>
+      <ion-buttons slot="end">
+        <ion-button (click)="activo=false;">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+        <ion-button (click)="guardar_producto()">
+          <ion-icon color="primary" slot="icon-only" name="save"></ion-icon>
+
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label class="normal" position="floating">Nombre</ion-label>
+      <ion-input class="normal" [(ngModel)]="newProductos.nombre" inputmode="numeric"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="normal" position="floating">Precio normal</ion-label>
+      <ion-input class="normal" [(ngModel)]="newProductos.precioNormal"  type="number" inputmode="numeric"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="normal" position="floating">Precio reducido</ion-label>
+      <ion-input class="normal"  [(ngModel)]="newProductos.precioReducido" type="number" inputmode="text"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label class="normal">Foto</ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+  
+          <label for="file-upload"> <ion-icon  slot="icon-only" name="image"></ion-icon></label>
+          <input (change)="newImagenLoad($event)" id="file-upload" type="file" style="display: none;" accept="image/*">
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+
+    <ion-item>
+      <img class="img" [src]="newProductos.foto">
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label class="normal" position="floating">Fecha</ion-label><br>
+      <ion-input class="normal" [(ngModel)]="newProductos.fecha" type="date"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="normal" position="floating">Stock</ion-label>
+      <ion-input class="normal"  [(ngModel)]="newProductos.stock" minValue="1" maxValue="100" type="number" inputmode="text"></ion-input>
+    </ion-item>
+  
+  
+    
+
+  </div>
+
+    <ion-item *ngFor="let producto of listaP">
+      <ion-label>{{ producto.nombre }}</ion-label>
+      <!-- Aquí puedes acceder a otras propiedades de producto, como producto.precioNormal, producto.precioReducido, etc. -->
+      <ion-buttons slot="end">
+        <ion-button (click)="newProductos= producto; activo=true">
+          <ion-icon name="create-sharp"></ion-icon>
+        </ion-button>
+        <ion-button (click)="deleteProducto(producto)">
+          <ion-icon  name="trash"></ion-icon>
+        </ion-button>
+        
+    
+      </ion-buttons>
+    </ion-item>
+
+    <!-- ... Otro contenido ... -->
+
+   
+
+</ion-content>

@@ -1,0 +1,94 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Registro
+
+    </ion-title>
+    <!-- icono al final back button-->
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="primary">
+
+  <h1 class="titulo">¿Nuevo en la aplicación?</h1>
+  <p class="parrafo">Registrate y obten las mejores cotizaciones y reservas del mercado</p>
+  <ion-card class="gradiente">
+
+    <ion-card-header>
+      <ion-card-title>Hotel Pato logico</ion-card-title>
+    </ion-card-header>
+    <form (ngSubmit)="register()" [formGroup]="regForm">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="nombre" type="text" required></ion-input>
+        <ion-note color="danger" *ngIf="regForm?.get('nombre')?.hasError('required') && regForm?.get('nombre')?.touched">
+          El nombre es requerido.
+        </ion-note>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input formControlName="apellido" type="text" required></ion-input>
+        <ion-note color="danger" *ngIf="regForm?.get('apellido')?.hasError('required') && regForm?.get('apellido')?.touched">
+          El apellido es requerido.
+        </ion-note>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Rut</ion-label>
+          <ion-input formControlName="rut" type="text" required></ion-input>
+          <ion-note color="danger" *ngIf="regForm?.get('rut')?.hasError('required') && regForm?.get('rut')?.touched">
+            El Rut es requerido.
+          </ion-note>
+      </ion-item>
+      
+      <ion-item>
+          <ion-label position="floating">Telefono</ion-label>
+          <ion-input formControlName="telefono" type="tel" required></ion-input>
+          <ion-note color="danger" *ngIf="regForm?.get('telefono')?.hasError('required') && regForm?.get('telefono')?.touched">
+            El telefono es requerido.
+          </ion-note>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Dirección</ion-label>
+        <ion-input formControlName="direccion" type="tel" required></ion-input>
+        <ion-note color="danger" *ngIf="regForm?.get('direccion')?.hasError('required') && regForm?.get('direccion')?.touched">
+          la direcci&oacute;n es requerida.
+        </ion-note>
+    </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Fecha</ion-label>
+          <ion-input formControlName="fechaNac" type="date" required></ion-input>
+          <ion-note color="danger" *ngIf="regForm?.get('fechaNac')?.hasError('required') && regForm?.get('fechaNac')?.touched">
+            la fecha es requerida.
+          </ion-note>
+      </ion-item>
+            
+
+      <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input formControlName="correo"type="email" required></ion-input>
+        <ion-note color="danger" *ngIf="regForm?.get('correo')?.hasError('required') && regForm?.get('correo')?.touched">
+          El correo es requeido.
+        </ion-note>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input formControlName="password" type="password" required></ion-input>
+        <ion-note color="danger" *ngIf="regForm?.get('password')?.hasError('required') && regForm?.get('password')?.touched">
+          la contraseña es requerida.
+        </ion-note>
+      </ion-item>
+  
+  
+      <ion-button expand="full" type="submit">Registrate</ion-button>
+    </form>
+  </ion-card>
+  
+</ion-content>

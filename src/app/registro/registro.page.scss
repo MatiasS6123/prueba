@@ -1,0 +1,64 @@
+
+  ion-title{
+    text-align: center;
+  }
+  
+  .titulo{
+    text-align: center;
+  }
+  .parrafo{
+    text-align: center;
+  }
+  .gradiente{
+    background: linear-gradient(to bottom, #3498db, #e74c3c);
+  }
+  
+  ion-card{
+  
+    margin-top: 2rem; 
+  
+  }
+  ion-card-title{
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  ion-item{
+    margin: 1.5rem;
+  }
+  
+  ion-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    border-radius: 1000px; /* Aquí debes definir el radio de borde en píxeles o el valor que desees */
+  }
+  
+/* Estilos generales para la página de registro */
+ion-header[translucent="true"] {
+    /* Estilos del encabezado */
+  }
+  
+  ion-content {
+    /* Estilos del contenido */
+  }
+  
+  form {
+    /* Estilos del formulario */
+
+  }
+  
+  /* Media query para pantallas más pequeñas, como teléfonos */
+  @media (max-width: 768px) {
+    ion-content {
+      /* Ajusta el espaciado o el tamaño de fuente para pantallas más pequeñas */
+    }
+  }
+  
+  /* Media query para pantallas más grandes, como tabletas y escritorios */
+  @media (min-width: 768px) {
+    ion-content {
+      /* Ajusta el espaciado o el tamaño de fuente para pantallas más grandes */
+    }
+  }

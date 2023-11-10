@@ -1,0 +1,75 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content"  [swipeGesture]="false">
+      <ion-content>
+        <ion-list id="inbox-list">
+          <ion-list-header>Menu</ion-list-header>
+
+          <ion-menu-toggle *ngIf="!login" autoHide="false">
+            <ion-item detail="true" [routerLink]="['/registro']" routerLinkActive="router-link">
+              <ion-label>
+                Registro
+              </ion-label>
+              <ion-icon name="people"></ion-icon>
+            </ion-item>
+
+            <ion-item detail="true" [routerLink]="['/login']" routerLinkActive="router-link">
+              <ion-label>
+                Login
+              </ion-label>
+              <ion-icon name="person"></ion-icon>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle *ngIf="login" autoHide="false">
+            
+
+          
+            <ion-item detail="true" [routerLink]="['/tienda']" routerLinkActive="router-link">
+              <ion-label>
+                Tienda
+              </ion-label>
+              <ion-icon name="bag"></ion-icon>
+            
+            </ion-item>
+            <ion-item detail="true" [routerLink]="['/usuario/eliminar']" routerLinkActive="router-link">
+              <ion-label>
+                Ruta
+              </ion-label>
+              <ion-icon name="map"></ion-icon>
+            </ion-item>
+
+            <ion-item detail="true" [routerLink]="['/ubicación']" routerLinkActive="router-link">
+              <ion-label>
+                ver ubicaci&oacute;n
+              </ion-label>
+              <ion-icon name="locate"></ion-icon>
+            </ion-item>
+
+
+            <ion-item>
+              <ion-label>Modo Oscuro</ion-label>
+              <ion-toggle [(ngModel)]="modoOscuro" (ionChange)="cambiarModoOscuro()"></ion-toggle>
+            </ion-item>
+
+            <ion-item [routerLink]="['/crud-productos']">
+              <ion-label>Agregar productos</ion-label>
+              <ion-icon  name="add"></ion-icon>
+              
+            </ion-item>
+
+            <ion-item detail="true" (click)="logOut()">
+              <ion-label>
+                Salir
+              </ion-label>
+              <ion-icon name="exit"></ion-icon>
+            </ion-item>
+
+          </ion-menu-toggle>
+
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

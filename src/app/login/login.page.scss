@@ -1,0 +1,49 @@
+ion-content{
+  background: linear-gradient(to bottom, #3498db, #e74c3c);
+}
+ion-title{
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+a {
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.titulo{
+  text-align: center;
+}
+.parrafo{
+  text-align: center;
+}
+.gradiente{
+  background: linear-gradient(to bottom, #3498db, #e74c3c);
+}
+
+ion-card{
+
+  margin-top: 2rem; 
+
+}
+ion-card-title{
+  text-align: center;
+  padding: 1.5rem;
+}
+
+ion-item{
+  margin: 1.5rem;
+}
+
+ion-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  border-radius: 1000px; /* Aquí debes definir el radio de borde en píxeles o el valor que desees */
+}

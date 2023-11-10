@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Login
+
+    </ion-title>
+    <!-- icono al final back button-->
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary" padding>
+
+  <h1 class="titulo">Bienvenido de vuelta</h1>
+  <p class="parrafo">Accede para gestionar tu cuenta</p>
+  
+
+  <ion-card class="gradiente">
+    <ion-card-header>
+      <ion-card-title>Hotel Pato logico</ion-card-title>
+    </ion-card-header>
+    <form (ngSubmit)="login()">
+      <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input [(ngModel)]="credenciales.correo" name="email" type="email" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input [(ngModel)]="credenciales.password" name="password" type="password" required></ion-input>
+      </ion-item>
+      <div class="container">
+        <a [routerLink]="['/reset/password']">¿Olvidaste tu contraseña?</a>
+
+      </div>
+
+      
+      
+      
+      <ion-button expand="full" type="submit">Iniciar Sesión</ion-button>
+      
+    </form>
+  </ion-card>
+</ion-content>
